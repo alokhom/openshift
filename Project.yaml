@@ -4,19 +4,19 @@ metadata:
   name: infra
   namespace: argocd
 spec:
-  roles:
+  #roles:
   # A role which provides access to all applications in the project
-  - name: access
-    #description: Read-only privileges to infra project
-    description: privileges to infra project
-    policies:
-    - p, proj:infra:admin, applications, get, infra/*, allow
-    - p, proj:infra:admin, repositories, update, infra/https://github.com/alokhom, allow
-    - p, proj:infra:admin, repositories, create, infra/*, allow
-    - p, proj:infra:admin, repositories, delete, infra/*, allow
-    #- p, proj:infra:admin, repositories, update, infra*, allow
-    groups:
-    - my-oidc-group
+  # - name: access
+  #   #description: Read-only privileges to infra project
+  #   description: privileges to infra project
+  #   policies:
+  #   - p, proj:infra:admin, applications, get, infra/*, allow
+  #   - p, proj:infra:admin, repositories, update, infra/https://github.com/alokhom, allow
+  #   - p, proj:infra:admin, repositories, create, infra/*, allow
+  #   - p, proj:infra:admin, repositories, delete, infra/*, allow
+  #   #- p, proj:infra:admin, repositories, update, infra*, allow
+  #   groups:
+  #   - my-oidc-group
   # sourceRepos:
   # - '*'
   # Do not use the test repo in argoproj
@@ -44,3 +44,11 @@ spec:
   # clusterResourceWhitelist:
   # - group: '*'
   #   kind: '*'
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
