@@ -2727,7 +2727,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  volumeMode: Filesystem
+  #volumeMode: Filesystem
   storageClassName: standard
   resources:
     requests:
